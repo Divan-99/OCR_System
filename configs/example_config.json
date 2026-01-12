@@ -1,0 +1,43 @@
+{
+"engine": "delivery_note",
+
+"paths": {
+"watch_dir": "A:/",
+"output_dir": "Z:/",
+"error_dir": "F:/",
+"temp_dir": "Z:/tmp",
+"poppler_path": null,
+"tesseract_path": "C:/Program Files/Tesseract-OCR/tesseract.exe"
+},
+
+"processing": {
+"dpi": 300,
+"coords_dpi": 600,
+"first_page_only": true,
+"scan_all_pages": false,
+"enable_rotation": false,
+"stable_seconds": 2,
+"max_wait": 30,
+"restart_interval_seconds": 21600,
+"inactivity_limit": 600,
+"max_workers": 4
+},
+
+"ocr": {
+"enabled": true,
+"ocr_lang": "en",
+"expected_digits": 7,
+"roi_coords": [2800, 450, 3600, 800]
+},
+
+"barcode": {
+"enabled": false,
+"barcode_coords": null,
+"formats": ["code128"]
+},
+
+"debug": {
+"roi_debug_keep": 5,
+"log_level": "info"
+}
+}
