@@ -1,0 +1,11 @@
+{
+  "watch_dir": "B:\\",
+  "output_dir": "Y:\\",
+  "error_dir": "G:\\",
+  "barcode_coords": [2900, 90, 4887, 986],
+  "coords_dpi": 600,
+  "dpi": 300,
+  "stable_seconds": 2,
+  "max_wait": 30,
+  "workers": 10
+}

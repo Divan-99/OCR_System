@@ -1,0 +1,7 @@
+{
+  "watch_folder": "I:/",
+  "output_folder": "W:/",
+  "error_folder": "J:/",
+  "crop_box": [1980, 260, 2200, 440],
+  "ocr_lang": "en"
+}

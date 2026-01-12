@@ -1,0 +1,7 @@
+{
+    "watch_dir": "A:\\",  
+    "output_dir": "Z:\\",  
+    "error_dir": "F:\\",  
+    "document_number_coords": [2800, 450, 3600, 800],  
+    "ocr_lang": "en" 	 
+}
