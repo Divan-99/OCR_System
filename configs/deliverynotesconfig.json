@@ -1,7 +1,10 @@
 {
-    "watch_dir": "A:\\",  
-    "output_dir": "Z:\\",  
-    "error_dir": "F:\\",  
-    "document_number_coords": [2800, 450, 3600, 800],  
-    "ocr_lang": "en" 	 
+    "watch_dir": "A:\\", // Folder the system monitors for incoming PDF files
+    "output_dir": "Z:\\", // Folder where successfully renamed PDFs are saved
+    "error_dir": "F:\\", // Folder where failed or unreadable PDFs are moved
+    "document_number_coords": [2800, 450, 3600, 800], // ROI crop box in pixels. Format is [x_min, y_min, x_max, y_max]. Used to isolate the number area for OCR
+    "ocr_lang": "en", // OCR language code passed to EasyOCR
+    "poppler_path": null, // Optional path to Poppler binaries. Required on some Windows systems for pdf2image
+    "temp_dir": "Z:\\tmp_images", // Temporary folder for generated images and preprocessing output
+    "max_workers": 3 // Number of parallel threads allowed for PDF processing
 }
