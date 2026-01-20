@@ -1,0 +1,192 @@
+OCR PIPELINE SETUP INSTRUCTIONS
+
+
+SYSTEM REQUIREMENTS
+
+Operating System
+- Windows 10 or Windows 11
+
+Python
+- Python 3.10 or newer
+- Python must be added to PATH
+
+
+REQUIRED SYSTEM SOFTWARE
+
+These are NOT installed with pip.
+
+
+1. Tesseract OCR
+
+Download:
+https://github.com/UB-Mannheim/tesseract/wiki
+
+Install:
+- Install the Windows installer.
+- Note the installation path.
+- Example path:
+  C:\Users\YOUR_USER\AppData\Local\Programs\Tesseract-OCR\tesseract.exe
+
+Update inside your Python scripts if needed:
+pytesseract.pytesseract.tesseract_cmd = r"FULL_PATH_TO_TESSERACT_EXE"
+
+
+2. Poppler for PDF conversion
+
+Download:
+https://github.com/oschwartz10612/poppler-windows/releases
+
+Install:
+- Extract the ZIP file.
+- Copy the folder to:
+  C:\poppler
+
+Add to Windows PATH:
+- Open Environment Variables.
+- Add:
+  C:\poppler\Library\bin
+
+
+3. ZBar Barcode Library
+
+Required for pyzbar barcode decoding.
+
+Download:
+https://sourceforge.net/projects/zbar/
+
+Install the Windows installer.
+Restart your PC after installation.
+
+
+
+PYTHON ENVIRONMENT SETUP
+
+
+Open Command Prompt or PowerShell inside the project folder.
+
+Create virtual environment:
+
+python -m venv .venv
+
+
+Activate virtual environment:
+
+.venv\Scripts\activate
+
+
+Upgrade pip:
+
+python -m pip install --upgrade pip
+
+
+Install all dependencies:
+
+pip install -r requirements.txt
+
+
+
+REQUIREMENTS.TXT CONTENT
+
+easyocr
+torch
+opencv-python
+pdf2image
+pillow
+pytesseract
+watchdog
+pyzbar
+numpy
+colorama
+
+
+
+CONFIGURATION FILES
+
+Each pipeline has its own config file.
+
+- deliverynotesconfig.json
+- pickingslipconfig.json
+- purchaseorderconfig.json
+- shipmentconfig.json
+
+Edit paths to match your system.
+
+Rules:
+- Use absolute paths.
+- Use double backslashes in Windows paths.
+- Remove any inline comments before running.
+
+
+FOLDER STRUCTURE EXAMPLE
+
+OCR_Project
+│
+├─ deliverynotes.py
+├─ deliverynotesconfig.json
+│
+├─ pickingslip.py
+├─ pickingslipconfig.json
+│
+├─ purchaseorder.py
+├─ purchaseorderconfig.json
+│
+├─ shipment.py
+├─ shipmentconfig.json
+│
+├─ requirements.txt
+├─ instruction.txt
+│
+└─ .venv
+
+
+
+RUNNING A PIPELINE
+
+Activate virtual environment:
+
+.venv\Scripts\activate
+
+
+Run a pipeline:
+
+python deliverynotes.py
+python pickingslip.py
+python purchaseorder.py
+python shipment.py
+
+
+
+TROUBLESHOOTING
+
+
+If PDF conversion fails:
+- Poppler is not installed or not in PATH.
+
+If OCR returns empty text:
+- Verify Tesseract path.
+- Check crop_box or ROI coordinates.
+
+If barcode decoding fails:
+- Verify ZBar installation.
+- Adjust barcode ROI coordinates.
+
+If watchdog crashes:
+- Confirm watch folder exists.
+- Verify permissions.
+
+If Python crashes on install:
+- Upgrade pip.
+- Confirm Python version.
+
+
+
+MAINTENANCE
+
+- Keep configs backed up.
+- Clean tmp folders periodically.
+- Validate ROI when document layout changes.
+- Restart pipelines weekly if running continuously.
+
+
+
+END OF FILE
