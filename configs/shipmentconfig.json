@@ -1,6 +1,7 @@
 {
-  "watch_folder": "E:/",
-  "error_folder": "H:/",
-  "output_folder": "X:/",
-  "crop_box": [1540, 680, 1760, 770]
+    "watch_folder": "E:/", // Folder monitored for incoming shipment PDFs
+    "output_folder": "X:/", // Folder where renamed PDFs are saved
+    "error_folder": "H:/", // Folder where failed PDFs and debug images are moved
+
+    "crop_box": [1540, 680, 1760, 770] // ROI crop box in pixels. Format is [x_min, y_min, x_max, y_max]
 }
