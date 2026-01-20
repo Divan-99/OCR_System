@@ -1,0 +1,10 @@
+easyocr
+torch
+opencv-python
+pdf2image
+pillow
+pytesseract
+watchdog
+pyzbar
+numpy
+colorama
