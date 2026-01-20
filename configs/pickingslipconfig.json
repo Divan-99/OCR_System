@@ -1,11 +1,15 @@
 {
-  "watch_dir": "B:\\",
-  "output_dir": "Y:\\",
-  "error_dir": "G:\\",
-  "barcode_coords": [2900, 90, 4887, 986],
-  "coords_dpi": 600,
-  "dpi": 300,
-  "stable_seconds": 2,
-  "max_wait": 30,
-  "workers": 10
+    "watch_dir": "B:\\", // Folder the system monitors for incoming PDF files
+    "output_dir": "Y:\\", // Folder where successfully renamed PDFs are saved
+    "error_dir": "G:\\", // Folder where failed or unreadable PDFs are moved
+
+    "barcode_coords": [2900, 90, 4887, 986], // ROI crop box in pixels. Format is [x_min, y_min, x_max, y_max]. Used to isolate the barcode area
+
+    "coords_dpi": 600, // DPI at which the ROI coordinates were measured
+    "dpi": 300, // DPI used when converting PDF to image
+
+    "stable_seconds": 2, // Seconds the file size must remain unchanged before processing
+    "max_wait": 30, // Maximum time to wait for a file to stabilize
+
+    "workers": 10 // Number of parallel worker processes for barcode decoding
 }
