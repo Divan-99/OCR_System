@@ -1,7 +1,9 @@
 {
-  "watch_folder": "I:/",
-  "output_folder": "W:/",
-  "error_folder": "J:/",
-  "crop_box": [1980, 260, 2200, 440],
-  "ocr_lang": "en"
+    "watch_folder": "I:/", // Folder monitored for incoming purchase order PDFs
+    "output_folder": "W:/", // Folder where renamed PDFs are saved
+    "error_folder": "J:/", // Folder where failed PDFs and debug images are moved
+
+    "crop_box": [1980, 260, 2200, 440], // ROI crop box in pixels. Format is [x_min, y_min, x_max, y_max]
+
+    "ocr_lang": "en" // OCR language used by Tesseract
 }
